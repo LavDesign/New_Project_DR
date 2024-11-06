@@ -68,7 +68,7 @@ const TableBodyComponent = ({ table, handleClick }) => {
                 // Verifica si renderValue está definido antes de usarlo
                 if (!cell.column.columnDef.cell) {
                   console.error(`renderValue is undefined for cell: ${cell.id}`);
-                  return null;
+                  return <td key={cell.id} role='cell' className={styles['tr-oveflow']} style={style}>N/A</td>;
                 }     
 
                 return cell.column.columnDef.header === 'kpiName' &&
