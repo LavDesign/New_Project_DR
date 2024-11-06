@@ -65,9 +65,9 @@ const TableBodyComponent = ({ table, handleClick }) => {
                     cell.column.columnDef.cellBackgroundColor?.(),
                 };
 
-                // Verifica si renderValue está definido antes de usarlo
+                // Verifica si cell.column.columnDef.cell está definido antes de usarlo
                 if (!cell.column.columnDef.cell) {
-                  console.error(`renderValue is undefined for cell: ${cell.id}`);
+                  console.error(`cell.column.columnDef.cell is undefined for cell: ${cell.id}`);
                   return <td key={cell.id} role='cell' className={styles['tr-oveflow']} style={style}>N/A</td>;
                 }     
 
@@ -122,13 +122,7 @@ const TableBodyComponent = ({ table, handleClick }) => {
               })}
             </tr>
           );
-        }) /*  : (
-        <tr>
-          <td className={styles.div_para_not_found}>
-            <DataNotFound selectedDashboardTab={selectedDashboardTab} />
-          </td>
-        </tr>
-      ) */
+        })
       }
     </tbody>
   );
