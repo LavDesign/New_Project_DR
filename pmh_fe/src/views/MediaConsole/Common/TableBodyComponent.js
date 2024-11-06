@@ -65,6 +65,12 @@ const TableBodyComponent = ({ table, handleClick }) => {
                     cell.column.columnDef.cellBackgroundColor?.(),
                 };
 
+                // Verifica si renderValue está definido antes de usarlo
+                if (!cell.column.columnDef.cell) {
+                  console.error(`renderValue is undefined for cell: ${cell.id}`);
+                  return null;
+                }     
+
                 return cell.column.columnDef.header === 'kpiName' &&
                   selectedDailyReviewMenu.pageId ===
                     DAILY_REVIEW_TABS.CAMPAIGN_ADV.id ? null : cell.column
