@@ -1,0 +1,146 @@
+$font-graphik: "Graphik", sans-serif;
+
+.master-header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-size: 100% 100%;
+}
+
+.header-container {
+  position: relative;
+  margin: 24px 32px;
+
+  .header-title {
+    color: #FFF;
+    font-family: $font-graphik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: -0.35px;
+    text-wrap: nowrap;
+  }
+
+  .header-logo {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+  }
+}
+
+.link-container {
+  position: absolute;
+  margin-left: 32px;
+  gap: 30px;
+  top: 85px;
+}
+
+.link-group {
+  transition: none;
+  color: white;
+  text-align: center;
+  font-family: $font-graphik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 550;
+  line-height: 0px;
+  letter-spacing: -0.25px;
+  text-decoration: none;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.link-group.selected {
+  position: relative; 
+  opacity: 1;
+}
+
+.selected-bar {
+  position: absolute;
+  top: 22px;
+  left: 1px;
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  border-top-left-radius: 4px; 
+  border-top-right-radius: 4px; 
+}
+
+.nav-bar-menu {
+  cursor: pointer;
+}
+
+.sub-menu {
+  border-radius: 0.5rem;
+  background: #FFF;
+  box-shadow: 0px 4px 16px 0px rgba(55, 65, 81, 0.25);
+  position: absolute;
+  left: -0.38rem;
+  top: .9375rem;
+  z-index: 3;
+  display: flex;
+  flex-direction: column; 
+  padding: 0.5rem;
+
+  a {
+    display: flex;
+    padding: 0.625rem 0.5rem 0.625rem 0.75rem;
+    align-items: center;
+    color: #374151;
+    font-family: "Graphik", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    letter-spacing: -0.0175rem;
+    max-width: 11.75rem;
+    opacity: 0.9;
+  
+    &:hover {
+      color: #15181B;
+      background-color: #f3f4f6;
+      border-radius: 0.5rem;
+    }
+  
+    &:active {
+      color: #15181B;
+      opacity: 0.8;
+      background-color: #f3f4f6;
+    }
+  }
+}
+
+.sub-menu-arrow {
+  position: absolute;
+  right: -1.5rem;
+  top: -0.625rem;
+  cursor: pointer;
+}
+
+.groove_header_image {
+  width: 100%;
+  height: 303px;
+  position: absolute;
+}
+
+.groove_title {
+  color: #FFF;
+  font-family: Graphik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: -0.35px;
+  width: 50% !important;
+}
+
+.banner-separator {
+  height: 24px;
+  width: 1px;
+  background-color: #FFFFFF;
+  margin-left: 32px;
+  margin-right: 24px;
+}

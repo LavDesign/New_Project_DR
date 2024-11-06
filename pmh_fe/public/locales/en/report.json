@@ -1,0 +1,9 @@
+{
+    "error-title": "Sorry, the report failed",
+    "error-subtitle": "If you have access to it, please try again",
+    "sisense_filters_title": "Filters",
+    "sisense_download_as_csv": "Download as CSV",
+    "sisense_download_as_excel": "Download as Excel",
+    "more_options": "More options",
+    "actions": "Actions"
+}

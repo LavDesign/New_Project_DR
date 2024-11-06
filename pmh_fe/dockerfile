@@ -1,0 +1,47 @@
+FROM ${ACR.Server}/node:20.14.0-alpine3.20 as build
+## Upgrade os alpine image
+RUN apk update && apk upgrade --no-cache
+RUN apk upgrade --no-cache && rm -rf /var/cache/apk/* /var/lib/apk/* /etc/apk/cache
+
+## Installing latest stable version of npm
+RUN npm install -g npm@latest
+
+WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
+COPY . .
+
+RUN npm install
+ARG Build_Env
+RUN npm run build:${Build_Env}
+
+FROM ${ACR.Server}/nginx:1.26.0-alpine3.19-slim
+
+## Upgrade os alpine image and tools install
+RUN apk update && apk upgrade --no-cache
+RUN apk add -U --no-cache busybox-extras
+RUN apk upgrade --no-cache && rm -rf /var/cache/apk/* /var/lib/apk/* /etc/apk/cache
+
+## Install Lib cap
+RUN apk -U --no-cache add libcap
+
+## NonRootPortBinding for Nginx
+RUN setcap 'cap_net_bind_service=+ep' /usr/sbin/nginx
+
+#Setting folder permissions
+RUN touch /var/run/nginx.pid && \
+  chown -Rh nginx. /var/run/nginx.pid
+RUN chown -Rh nginx. /var/cache/nginx && \
+  chown -Rh nginx. /var/log/nginx && \
+  chown -Rh nginx. /etc/nginx && \
+  chown -Rh nginx. /usr/share/nginx/html
+
+## switch to non-root user
+USER nginx
+
+ARG Build_Env
+COPY --chown=nginx:nginx --from=build /app/dist/ /usr/share/nginx/html/${HTML_Path}/
+COPY --chown=nginx:nginx ["_CICD/nginx/keepalive.htm", "usr/share/nginx/html/"]
+COPY --chown=nginx:nginx ["_CICD/nginx/404.html", "/usr/share/nginx/html/"]
+COPY --chown=nginx:nginx ["public/robots.txt", "usr/share/nginx/html/"]
+COPY --chown=nginx:nginx --from=build ["/app/dist/_nginx/nginx_${Build_Env}.conf", "/etc/nginx/nginx.conf"]
+#COPY --chown=nginx:nginx ["_CICD/nginx/ssl/*", "/etc/ssl/"]

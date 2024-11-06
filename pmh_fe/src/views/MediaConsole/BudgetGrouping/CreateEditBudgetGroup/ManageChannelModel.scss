@@ -1,0 +1,118 @@
+.manage-channel-backdrop {
+  background-color: #15181b;
+  opacity: 0.4 !important;
+}
+
+.manage-channel-dialog {
+  max-width: 25rem;
+}
+
+.manage-channel-modal-content {
+  width: 25rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0px 2px 40px 0px rgba(0, 0, 0, 0.15);
+  padding: 1.5rem;
+  .modal-header {
+    justify-content: space-between;
+    padding: 0;
+    border: none;
+
+    .modal-title {
+      color: #15181b;
+      font-family: Graphik;
+      font-size: 1.25rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.5rem;
+      letter-spacing: -0.02188rem;
+    }
+    button {
+      background: none;
+      border: none;
+      display: flex;
+      padding: 0;
+    }
+  }
+
+  .modal-body {
+    padding: 1rem 0;
+    border: none;
+    background: none;
+
+    .modal-subtitle {
+      color: #6b7280;
+      font-family: Graphik;
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.125rem;
+      letter-spacing: -0.01563rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .modal-footer {
+    background: none;
+    border: none;
+    padding: 0;
+    gap: 0.5rem;
+
+    .btn-label {
+      text-align: center;
+      font-family: Graphik;
+      font-size: 0.75rem;
+      font-weight: 500;
+      line-height: 1rem;
+      letter-spacing: -0.0075rem;
+    }
+    .secondary-btn {
+      width: 7rem;
+      height: 2rem;
+      padding: 0rem 1rem;
+      border-radius: 3rem;
+      border: 1.5px solid #d1d5db;
+      background: rgba(255, 255, 255, 0);
+
+      span {
+        color: #374151;
+      }
+
+      &:hover {
+        background: #f3f4f6;
+        outline: 1.5px solid #15181b;
+      }
+
+      &:active {
+        outline: 1.5px solid #374151;
+        background: #e5e7eb;
+      }
+    }
+
+    .primary-btn {
+      width: 7rem;
+      height: 2rem;
+      padding: 0rem 1rem;
+      border-radius: 3rem;
+      background: #15181b;
+      border: 0;
+
+      span {
+        color: #fff;
+      }
+      &:hover {
+        background: rgba(21, 24, 27, 0.9);
+      }
+
+      &:active {
+        outline: 4px solid #e5e7eb;
+      }
+
+      &.disabled {
+        background: rgba(21, 24, 27, 0.1);
+        cursor: default;
+        pointer-events: none;
+        opacity: 0.8;
+      }
+    }
+  }
+}

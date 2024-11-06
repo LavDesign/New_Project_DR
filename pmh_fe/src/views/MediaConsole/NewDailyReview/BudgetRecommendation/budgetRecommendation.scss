@@ -1,0 +1,124 @@
+/*================ Common Tool Bar *Overwritten* ================*/
+.daily-review-container-section {
+    width: 100% !important;
+    margin-left: 0 !important;
+
+    .common-tool-bar {
+        width: 100% !important;
+        margin-top: 30px !important;
+    }
+
+    .common-tool-bar {
+        .search-by-text {
+            font-family: "Graphik", sans-serif;
+        }
+    }
+
+    .export_button_blue {
+        width: 104px !important;
+        height: 32px;
+        color: white;
+        padding-left: 13px;
+        padding-top: 5px;
+        cursor: pointer;
+        display: inline-flex;
+        justify-content: space-evenly;
+        margin-top: 0px;
+        margin-right: 20px;
+        opacity: 1;
+        background-color: rgba(0, 65, 240, 1);
+        border-radius: 48px;
+        --bs-btn-hover-bg: black;
+        --bs-btn-hover-color: white;
+        --bs-btn-active-bg: black;
+        --bs-btn-active-color: white;
+        --bs-btn-active-border-color: white;
+    }
+
+    .export_button_blue_disabled {
+        width: 175px !important;
+        height: 32px;
+        color: #fff !important;
+        padding-left: 13px;
+        padding-top: 5px;
+        cursor: pointer;
+        display: inline-flex;
+        justify-content: space-evenly;
+        margin-top: 0px;
+        margin-right: 20px;
+        opacity: 1;
+        background-color: rgba(0, 65, 240, 0.45) !important;
+        border-radius: 48px;
+        border: 0 none !important;
+        --bs-btn-hover-bg: black;
+        --bs-btn-hover-color: white;
+        --bs-btn-active-bg: black;
+        --bs-btn-active-color: white;
+        --bs-btn-active-border-color: white;
+    }
+    .export_button_blue {
+        &:hover {
+            background-color: rgba(0, 52, 192, 1);
+        }
+        &:active {
+            background-color: rgba(0, 52, 192, 1) !important;
+        }
+    }
+}
+
+
+.budget-table-container {
+    border-collapse: collapse;
+    border-spacing: 0 0.1875rem;
+    margin-right: 1rem;
+    border-radius: 0.375rem;
+    opacity: 1;
+    width: 100%;
+    overflow-x: auto;
+    max-height: 35vh;
+
+    .budget-table-container-new-ui {
+        border-collapse: collapse;
+        border-spacing: 0 0.1875rem;
+        margin-right: 1rem;
+        border-radius: 0.375rem;
+        opacity: 1;
+        overflow-x: auto;
+        border: 1px solid #dfe3e8;
+        max-height: 85vh;
+    }
+
+    .budget-table-container-campaign-advisor {
+        max-height: 50vh;
+    }
+
+    .budget-table-search {
+        position: relative;
+        width: 17.3125rem;
+        height: 2rem;
+        left: 0.9375rem;
+        border-radius: 6.25rem;
+        border: 0.0625rem solid black;
+        padding: 0.25rem 1.25rem 0.25rem 0.625rem;
+        background-color: white !important;
+    }
+
+    .budget-table-search-input {
+        background-color: white !important;
+        padding: 0;
+    }
+
+    .messageStyle {
+        font-size: large;
+        position: relative;
+        top: 10%;
+        left: 50%;
+        font-family: Graphik;
+        font-size: 1rem;
+        letter-spacing: -0.03rem;
+    }
+
+   
+
+
+}

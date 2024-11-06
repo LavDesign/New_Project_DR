@@ -1,0 +1,31 @@
+
+const platform = 'twitter';
+
+export const standardKpiMetricsFields = [
+{value: "engagements", label: "'Engagements'"},
+{value: "impressions", label: "'Impressions'"},
+{value: "retweets", label: "'Retweets'"},
+{value: "replies", label: "'Replies'"},
+{value: "likes", label: "'Likes'"},
+{value: "follows", label: "'Follows'"},
+{value: "card_engagements", label: "'Card Engagements'"},
+{value: "clicks", label: "'Clicks'"},
+{value: "app_clicks", label: "'App Clicks'"},
+{value: "url_clicks", label: "'URL Clicks'"},
+{value: "qualified_impressions", label: "'Qualified Impressions'"},
+{value: "carousel_swipes", label: "'Carousel Swipes'"},
+{value: "billed_engagements", label: "'Billed Engagements'"},
+{value: "billed_charge_local_micro", label: "'Billed Charge Local Micro'"},
+{value: "video_total_views", label: "'Total Video Views'"},
+{value: "video_views_25", label: "'Video Views at 25%'"},
+{value: "video_views_50", label: "'Video Views at 50%'"},
+{value: "video_views_75", label: "'Video View at 75%'"},
+{value: "video_views_100", label: "'Video Views 100%'"},
+{value: "video_cta_clicks", label: "'Video CTA Clicks'"},
+{value: "video_content_starts", label: "'Video Content Starts'"},
+{value: "video_3s100pct_views", label: "'Video Views 3s 100pct'"},
+{value: "video_6s_views", label: "'Video Views 6Sec'"},
+{value: "video_15s_views", label: "'Video Views 15sec'"},
+{value: "media_views", label: "'Media Views'"},
+{value: "media_engagements", label: "'Media Engagements'"},
+]

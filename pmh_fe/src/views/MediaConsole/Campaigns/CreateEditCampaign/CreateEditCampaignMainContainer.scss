@@ -1,0 +1,455 @@
+.ce__title-underline {
+    height: 4px;
+    width: 100%;
+    margin-top: 16px; /* Adjust the spacing above the rectangle as needed */
+    border-radius: 4px;
+    background:  #E5E7EB;
+  }
+
+.ce__container {
+    display: flex;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 0.5rem;
+    background: #FFF;
+    overflow: auto;
+    // height: calc(100vh - 17rem);
+}
+
+.ce__panels_container {
+    display: flex;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 0.5rem;
+    background: #FFF;
+    overflow: auto;
+    height: calc(100vh - 17rem);
+}
+  
+.ce__title-container {
+    display: flex;
+    width: 100%;
+    // height: 3.25rem;
+    // padding-bottom: 1.25rem;
+    // gap: 63.5rem;
+}
+
+.ce__title-container-label {
+    color: var(--text-icons-text-icon-primary, #15181B);
+    font-family: Graphik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 133.333% */
+    letter-spacing: -0.36px;
+}
+
+.ce__title-container-sub-label {
+    color: #111827;
+
+    /* Paragraph/16px/Medium */
+    font-family: Graphik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 137.5% */
+    letter-spacing: -0.32px;
+    // margin-top: 24px;
+}
+
+.ce__panel {
+    display: flex;
+    gap: 1.5rem;
+    flex: 1 0 0;
+    width: 100%;
+}
+
+.ce__main-panel-container {
+    // display: flex;
+    // padding: 1.5rem;
+    gap: 1.5rem;
+    flex: 1 0 0;
+    border-radius: 0.5rem;
+    // border: 1px solid #D1D5DB;
+    width: 100%;
+    // margin-top: 24px;
+    height: 100%;
+}
+.ce__channel_box {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid #9CA3AF;
+    accent-color: black;
+}
+
+.ce__channel-checkboxes-container {
+    margin-top: 48px;
+    display: flex;
+    align-items: center; /* This ensures the checkbox and label are aligned nicely */
+    justify-content: flex-start;
+}
+.ce__channel-checkboxes-container > div {
+    width: 25%; /* Adjust the spacing between checkboxes as needed */
+  }
+.ce__checkbox-label {
+    color: #000;
+    font-family: Graphik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px; /* 118.75% */
+    letter-spacing: -0.32px;
+    margin-left: 8px;
+}
+
+/*-----------Left Panel----------*/
+
+.ce__left-panel-container {
+    display: flex;
+    width: 16.5rem;
+    padding: 0.0625rem 0.0625rem 0.0625rem 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.375rem;
+    border: 1px solid #D1D5DB;
+    opacity: 0.8;
+  }
+  
+  .ce__left-panel-container .ce__steps-title-container {
+    width: 100%;
+    height: 3.3125rem;
+    border-radius: 0.3125rem 0.3125rem 0rem 0rem;
+    background: #FFF;
+    padding-top: 1.44rem;
+  }
+  
+  .ce__left-panel-container .ce__steps-container-label-container {
+    display: flex;
+    width: 100%;
+    height: 1.375rem;
+    padding-right: 1.4375rem;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .ce__left-panel-container .ce__steps-container-label-title {
+    color: #000;
+    font-family: Graphik;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.375rem;
+    letter-spacing: -0.01rem;
+  }
+  
+  .ce__steps-flow-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .ce__steps-flow-container .ce__steps-item {
+    width: 100%;
+    height: 1.125rem;
+    display: flex;
+    width: 100%;
+    height: 1.125rem;
+    gap: 1rem;
+  }
+  
+  .ce__steps-flow-container .ce__steps-item-title {
+    /*   display: flex;
+    width: 100%;
+    height: 1.125rem;
+    flex-direction: column;
+    justify-content: center; */
+    color: #15181B;
+    font-family: Graphik;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1rem;
+    letter-spacing: -0.0175rem;
+  }
+  
+  .ce__oval-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  .ce__steps-flow-container .ce__blue-bg-color {
+    background-color: #0041F0;
+    border: 3px solid #B3C6FB;
+    width: 1.375rem;
+    height: 1.375rem;
+    margin-left: -0.125rem;
+  
+  }
+  
+  .ce__steps-flow-container .ce__green-bg-color {
+    background-color: #65A30D;
+  }
+  
+  .ce__steps-flow-container .ce__gray-bg-color {
+    background-color: #D1D5DB;
+  }
+  
+  .ce__steps-flow-container .ce__light-gray-bg-color {
+    background-color: #E5E7EB;
+  }
+  
+  .ce__steps-flow-container .ce__gray-color {
+    color: #D1D5DB;
+  }
+  
+  .ce__steps-flow-container .ce__light-black-color {
+    color: #6B7280;
+  }
+  
+  .ce__steps-flow-container .ce__green-color {
+    color: #65A30D;
+  }
+  
+  .ce__steps-item .ce__oval-icon span {
+    position: absolute;
+    width: 0.0625rem;
+    height: 0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1.225rem;
+  }
+  
+  .ce__steps-flow-container .ce__blue-bg-color span {
+    height: 0.6rem;
+    top: 1.28rem;
+  }
+  
+  .ce__steps-item.ce__plus-circle-img svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+  
+  .ce__steps-item.ce__plus-circle-blue-img {
+    cursor: pointer;
+  }
+  
+  .ce__steps-item.ce__plus-circle-blue-img:hover svg path {
+    fill: #0041F0;
+  }
+  
+  .ce__steps-item.ce__plus-circle-blue-img:hover .ce__steps-item-title {
+    color: #0041F0;
+    text-decoration: underline;
+  }
+  
+  
+  /*-----------End of Left Panel----------*/
+/*-----------Right Panel----------*/
+.ce__right-panel-container {
+    // display: flex;
+    // padding: 1.5rem;
+    gap: 1.5rem;
+    flex: 1 0 0;
+    border-radius: 0.5rem;
+    border: 1px solid #D1D5DB;
+    // width: 100%;
+  }
+  
+  .ce__right-panel-container .ce__section {
+    display: flex;
+    padding-bottom: 1rem;
+    flex-direction: column;
+    gap: 1.75rem;
+    width: 100%;
+  }
+  
+  .ce__section .field-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .ce__section .field-container .form-label-date-picker {
+    color: #374151;
+    font-family: Graphik;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1rem;
+    letter-spacing: -0.0175rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .ce__section .field-container .error-color {
+    color: #b91c1c;
+  }
+  
+  .ce__section .field-container .date-box {
+    display: flex;
+    padding: 1rem 0.75rem;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #9CA3AF;
+    background: rgba(255, 255, 255, 0.00);
+    height: 3rem;
+    width: 100%;
+    color: #15181B;
+    font-family: Graphik;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.375rem;
+    letter-spacing: -0.02rem;
+    cursor: pointer;
+  }
+  
+  .ce__section .field-container .date-box-focus-border {
+    border: 2px solid #15181B;
+    background: #FFF;
+  }
+  
+  .date-box.error-ouline,
+  .date-box.error-ouline:focus-visible {
+    border: 1.5px solid #DC2626 !important;
+  }
+  
+  .ce__section .field-container .date-icon-clear-container {
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    display: flex;
+  }
+  
+  .ce__section .field-container .date-input-clear-button {
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding-bottom: 0;
+  }
+  
+  .ce__section .field-container .date-icon {
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .ce__section .field-container .helper-text-container {
+    display: flex;
+    padding: 0.3rem 0.5rem 0 0.5rem;
+    color: #B91C1C;
+    font-family: Graphik;
+    font-size: .8125rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    letter-spacing: -0.0175rem;
+    position: absolute;
+  }
+  
+  .ce__section .field-container .helper-text-container-disabled-field {
+    color: #6B7280;
+    opacity: 0.6;
+  }
+  
+  .ce__section .field-container .form-label-select-channels {
+    color: #374151;
+    font-family: Graphik;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1rem;
+    letter-spacing: -0.0175rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .ce__section .field-container .disabled-field-input {
+    border: 1px solid #9CA3AF;
+    opacity: 0.6;
+    background: #F3F4F6;
+    pointer-events: none;
+    cursor: default;
+  }
+  
+  .ce__section .field-container .disabled-field {
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: default;
+  }
+  
+  .ce__right-panel-container .ce__final-section {
+    display: flex;
+    padding: 1rem 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1 0 0;
+    border-radius: 0.5rem;
+    border: 1px solid #D1D5DB;
+  }
+  
+  .ce__final-section .main-title {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .ce__final-section .main-title span {
+    color: #111827;
+    font-family: Graphik;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    letter-spacing: -0.02188rem;
+  }
+  
+  .ce__final-section .content {
+    color: #15181B;
+    font-family: Graphik;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.125rem;
+    letter-spacing: -0.01563rem;
+  }
+  
+  .ce__final-section .divider {
+    height: 0.0625rem;
+    background: #D1D5DB;
+  }
+  
+  .ce__final-section .channel-title {
+    color: #15181B;
+    font-family: Graphik;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    letter-spacing: -0.00875rem;
+  }
+  
+  .ce__final-section .channel-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .ce__final-section .channel-list .channel-title {
+    color: #15181B;
+    font-family: Graphik;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    letter-spacing: -0.0175rem;
+  }
+  
+  .ce__final-section .channel-list .channel-item {
+    color: #6B7280;
+    font-family: Graphik;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1rem;
+    letter-spacing: -0.0075rem;
+  }

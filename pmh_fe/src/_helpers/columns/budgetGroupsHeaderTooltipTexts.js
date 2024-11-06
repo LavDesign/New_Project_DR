@@ -1,0 +1,20 @@
+const TooltipTexts = {
+    BUDGET_GROUP: 'Budget Group',
+    CAMPAIGNS: 'Campaigns',
+    PLATFORMS: 'Platforms',
+    ACCOUNTS: 'Accounts',
+    BUDGET: 'Budget',
+    KPI: 'KPI',
+    ACTIONS: 'Actions',
+    CLIENT: 'Client',
+    START_DATE: 'Start Date',
+    END_DATE: 'End Date',
+    CHANNELS: 'Channels',
+    REGION: 'Region',
+    CAMPAIGN_ID: 'campaign_key',
+    CAMPAIGN: 'campaign_name',
+    ACCOUNT: 'account',
+    ACCOUNT_ID: 'account_key',
+    PLATFORM: 'publisher',
+  };
+  export default TooltipTexts;

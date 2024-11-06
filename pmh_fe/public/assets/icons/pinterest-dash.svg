@@ -1,0 +1,15 @@
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Styles" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Iconography" transform="translate(-478.000000, -1002.000000)">
+            <g id="pin-icon" transform="translate(478.000000, 1002.000000)">
+                <circle id="Oval" fill="#CA2027" cx="12" cy="12" r="12"></circle>
+                <g id="post-pinterest" transform="translate(6.400000, 5.600000)" fill="#FFFFFF">
+                    <path d="M6.4,9.76 C5.76,9.76 5.12,9.52 4.72,9.04 L3.92,11.6 L3.84,11.76 C3.68,12 3.44,12.16 3.12,12.16 C2.64,12.16 2.24,11.76 2.24,11.28 L2.24,11.2 L2.24,11.2 L2.32,11.04 L3.76,6.56 C3.76,6.56 3.6,6.08 3.6,5.36 C3.6,4 4.32,3.6 4.96,3.6 C5.52,3.6 6.08,3.84 6.08,4.64 C6.08,5.68 5.36,6.24 5.36,7.04 C5.36,7.6 5.84,8.08 6.4,8.08 C8.24,8.08 8.96,6.64 8.96,5.36 C8.96,3.6 7.44,2.16 5.6,2.16 C3.76,2.16 2.24,3.6 2.24,5.36 C2.24,5.92 2.4,6.4 2.64,6.88 C2.72,7.04 2.72,7.12 2.72,7.28 C2.72,7.76 2.4,8.08 1.92,8.08 C1.6,8.08 1.36,7.92 1.2,7.68 C0.8,6.96 0.56,6.16 0.56,5.28 C0.56,2.64 2.8,0.48 5.52,0.48 C8.24,0.48 10.48,2.64 10.48,5.28 C10.56,7.52 9.28,9.76 6.4,9.76 L6.4,9.76 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

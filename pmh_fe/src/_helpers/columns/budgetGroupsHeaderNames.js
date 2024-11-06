@@ -1,0 +1,20 @@
+const HeaderNames = {
+    BUDGET_GROUP: 'groupName',
+    CAMPAIGNS: 'campaigns',
+    PLATFORMS: 'platforms',
+    ACCOUNTS: 'accounts',
+    BUDGET: 'budget',
+    KPI: 'kpi',
+    ACTIONS: 'actions',
+    CLIENT: 'client',
+    START_DATE: 'start_date',
+    END_DATE: 'end_date',
+    CHANNELS: 'channels',
+    REGION: 'region',
+    CAMPAIGN_ID: 'campaign_key',
+    CAMPAIGN: 'campaign_name',
+    ACCOUNT: 'account',
+    ACCOUNT_ID: 'account_key',
+    PLATFORM: 'publisher',
+  };
+  export default HeaderNames;

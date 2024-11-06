@@ -1,0 +1,35 @@
+FROM node:20.14.0-alpine3.20 as build
+## Upgrade os alpine image
+RUN apk update && apk upgrade --no-cache
+RUN apk upgrade --no-cache && rm -rf /var/cache/apk/* /var/lib/apk/* /etc/apk/cache
+
+## Installing latest stable version of npm
+RUN npm install -g npm@latest
+
+WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
+COPY . .
+
+RUN npm install
+RUN npm run build:docker
+
+FROM nginx:1.26.0-alpine3.19-slim
+
+RUN apk -U --no-cache add libcap
+
+## NonRootPortBinding for Nginx
+RUN setcap 'cap_net_bind_service=+ep' /usr/sbin/nginx
+
+## switch to non-root user
+
+COPY --from=build /app/dist/ /usr/share/nginx/html/
+COPY ["_CICD/nginx/keepalive.htm", "usr/share/nginx/html/"]
+COPY ["_CICD/nginx/404.html", "/usr/share/nginx/html/"]
+COPY ["public/robots.txt", "usr/share/nginx/html/"]
+#COPY ["_CICD/nginx/nginx_local.conf", "/etc/nginx/nginx.conf"]
+COPY --from=build ["/app/dist/_nginx/nginx_local.conf", "/etc/nginx/nginx.conf"]
+COPY ["_https/cert.pem", "/etc/nginx/https/cert.pem"]
+COPY ["_https/key.pem", "/etc/nginx/https/key.pem"]
+
+EXPOSE 3000
+CMD [ "nginx", "-g", "daemon off;" ]

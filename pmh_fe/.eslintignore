@@ -1,0 +1,10 @@
+*.js
+src/**/*.js
+!src/views/campaignDash/CampaignDashToolbar.js
+!src/views/campaignDash/CampaignDashFloatingToolbar.js
+!src/views/Reports/Reports.js
+!src/views/Reports/Sisense/ActionItem.js
+!src/views/Reports/Sisense/config-sisense.js
+!src/views/Reports/Sisense/SisenseReport.js
+!src/views/Reports/Sisense/Widget.js
+!src/views/Reports/Sisense/WidgetContent.js

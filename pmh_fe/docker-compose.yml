@@ -1,0 +1,11 @@
+version: "3"
+services:
+    pmh-nginx:
+        container_name: 'pmh-nginx'
+        build:
+            context: .
+            dockerfile: dockerfile.local
+        ports:
+            - 3000:3000
+        environment:
+            NODE_ENV: local
