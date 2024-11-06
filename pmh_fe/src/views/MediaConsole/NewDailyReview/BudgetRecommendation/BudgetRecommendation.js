@@ -16,9 +16,7 @@ import { DAILY_REVIEW_TABS } from "_helpers/Utils/mediaConsoleUtil";
 import CommonToolBar from "../../Common/CommonToolBar/CommonToolBar";
 import ExportTableComponent from "../../../shared/ExportTableComponent";
 import "./budgetRecommendation.scss";
-import BudgetRecommendationAction from "./BudgetRecommendationAction"
-
-
+import BudgetRecommendationAction from "./BudgetRecommendationAction";
 
 const BudgetRecommendation = ({ tab, headerGroups, tableData }) => {
     const [data, setData] = useState(undefined);
@@ -38,14 +36,14 @@ const BudgetRecommendation = ({ tab, headerGroups, tableData }) => {
             allColumnslist,
             "budgetRecommendation"
         ).filter((col) => col !== undefined);
-    
+
         listOfColumns = listOfColumns.filter(
             (item, index) =>
                 listOfColumns.findIndex(
                     (elem) => elem.accessorKey === item.accessorKey
                 ) === index
         );
-    
+
         // Agrega la nueva columna de Actions con un id
         listOfColumns.push({
             Header: () => <span>Actions</span>,
@@ -55,7 +53,7 @@ const BudgetRecommendation = ({ tab, headerGroups, tableData }) => {
                 <BudgetRecommendationAction recommendation={row.original} />
             ),
         });
-    
+
         return listOfColumns;
     }, []);
 
@@ -149,10 +147,6 @@ const BudgetRecommendation = ({ tab, headerGroups, tableData }) => {
                     </CustomButton>
                 }
             />
-
-            {/* <div className="daily-review-container-section-title">
-                Budget Recommendation
-            </div> */}
 
             {data ? (
                 data.message ? (
