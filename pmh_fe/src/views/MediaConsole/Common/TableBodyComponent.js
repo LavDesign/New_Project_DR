@@ -34,102 +34,94 @@ const TableBodyComponent = ({ table, handleClick }) => {
 
   return (
     <tbody role='rowgroup'>
-      {
-        rows.map((row, i) => {
-          return (
-            <tr
-              key={row.id}
-              style={{ display: 'flex', position: 'sticky' }}
-              role='row'
-              className={styles['table-style']}
-              onClick={() => {
-                console.log('row clicked', row);
-              }}
-            >
-              {selectedDailyReviewMenu.pageId ===
-              DAILY_REVIEW_TABS.BUDGET_REC.id ? (
-                !row.getIsGrouped() ? (
-                  <CheckBoxCell handleClick={handleClick} row={row} />
-                ) : (
-                  <td style={{ padding: '16px' }}></td>
-                )
-              ) : null}
-              {row.getAllCells().map((cell, index) => {
-                let style = {
-                  boxSizing: 'border-box',
-                  display: 'inline-block',
-                  width: '100%',
-                  textAlign: 'center',
-                  backgroundColor:
-                    !cell.getIsPlaceholder() &&
-                    cell.column.columnDef.cellBackgroundColor?.(),
-                };
+      {rows.map((row, i) => {
+        return (
+          <tr
+            key={row.id}
+            style={{ display: 'flex', position: 'sticky' }}
+            role='row'
+            className={styles['table-style']}
+            onClick={() => {
+              console.log('row clicked', row);
+            }}
+          >
+            {selectedDailyReviewMenu.pageId === DAILY_REVIEW_TABS.BUDGET_REC.id ? (
+              !row.getIsGrouped() ? (
+                <CheckBoxCell handleClick={handleClick} row={row} />
+              ) : (
+                <td style={{ padding: '16px' }}></td>
+              )
+            ) : null}
+            {row.getAllCells().map((cell, index) => {
+              let style = {
+                boxSizing: 'border-box',
+                display: 'inline-block',
+                width: '100%',
+                textAlign: 'center',
+                backgroundColor:
+                  !cell.getIsPlaceholder() && cell.column.columnDef.cellBackgroundColor?.(),
+              };
 
-                // Verifica si cell.column.columnDef.cell está definido antes de usarlo
-                if (!cell.column.columnDef.cell) {
-                  console.error(`cell.column.columnDef.cell is undefined for cell: ${cell.id}`);
-                  return <td key={cell.id} role='cell' className={styles['tr-oveflow']} style={style}>N/A</td>;
-                }   
+              // Verifica si cell.column.columnDef.cell está definido antes de usarlo
+              if (!cell.column.columnDef.cell) {
+                console.error(`cell.column.columnDef.cell is undefined for cell: ${cell.id}`);
+                return <td key={cell.id} role='cell' className={styles['tr-oveflow']} style={style}>N/A</td>;
+              }
 
-                let cellValue = cell.getValue();
-                if (typeof cellValue === 'undefined') {
-                  console.error(`cell.getValue() is undefined for cell: ${cell.id}`);
-                  cellValue = 'N/A';
-                }
+              let cellValue = cell.getValue();
+              if (typeof cellValue === 'undefined' || cellValue === null) {
+                console.error(`cell.getValue() is undefined for cell: ${cell.id}`);
+                cellValue = 'N/A';
+              }
 
-                return cell.column.columnDef.header === 'kpiName' &&
-                  selectedDailyReviewMenu.pageId ===
-                    DAILY_REVIEW_TABS.CAMPAIGN_ADV.id ? null : cell.column
-                    .columnDef.header === 'groupName' &&
-                  selectedDailyReviewMenu.pageId ===
-                    DAILY_REVIEW_TABS.BUDGET_REC.id ? (
-                  <td
-                    key={cell.id}
-                    role='cell'
-                    className={`${styles['tr-oveflow']}`}
-                    style={{
-                      ...style,
-                      cursor: 'pointer',
-                      color: 'blue',
-                    }}
-                    onClick={() =>
-                      dispatch({
-                        type: SELECTED_DAILY_REVIEW_MENU,
-                        payload: {
-                          pageId: DAILY_REVIEW_TABS.CAMPAIGN_ADV.id,
-                          groupList: [cell.row.original],
-                        },
-                      })
-                    }
-                  >
-                    {flexRender(
-                      cell.column.columnDef.cell(cellValue),
-                      cell.getContext()
-                    )}
-                  </td>
-                ) : (
-                  <td
-                    key={cell.id}
-                    role='cell'
-                    className={`${styles['tr-oveflow']}`}
-                    style={style}
-                  >
-                    {flexRender(
-                      currencyColumn.includes(cell.column.columnDef.header) ||
-                        ['kpiValue', 'campaignKpi'].includes(
-                          cell.column.columnDef.header
-                        )
-                        ? cell.column.columnDef.cell(cell)
-                        : cell.column.columnDef.cell(cellValue),
-                      cell.getContext()
-                    )}
-                  </td>
-                );
-              })}
-            </tr>
-          );
-        })
-      }
+              return cell.column.columnDef.header === 'kpiName' &&
+                selectedDailyReviewMenu.pageId === DAILY_REVIEW_TABS.CAMPAIGN_ADV.id ? null : cell.column
+                .columnDef.header === 'groupName' &&
+                selectedDailyReviewMenu.pageId === DAILY_REVIEW_TABS.BUDGET_REC.id ? (
+                <td
+                  key={cell.id}
+                  role='cell'
+                  className={`${styles['tr-oveflow']}`}
+                  style={{
+                    ...style,
+                    cursor: 'pointer',
+                    color: 'blue',
+                  }}
+                  onClick={() =>
+                    dispatch({
+                      type: SELECTED_DAILY_REVIEW_MENU,
+                      payload: {
+                        pageId: DAILY_REVIEW_TABS.CAMPAIGN_ADV.id,
+                        groupList: [cell.row.original],
+                      },
+                    })
+                  }
+                >
+                  {flexRender(
+                    cell.column.columnDef.cell(cellValue),
+                    cell.getContext()
+                  )}
+                </td>
+              ) : (
+                <td
+                  key={cell.id}
+                  role='cell'
+                  className={`${styles['tr-oveflow']}`}
+                  style={style}
+                >
+                  {flexRender(
+                    currencyColumn.includes(cell.column.columnDef.header) ||
+                      ['kpiValue', 'campaignKpi'].includes(cell.column.columnDef.header)
+                      ? cell.column.columnDef.cell(cell)
+                      : cell.column.columnDef.cell(cellValue),
+                    cell.getContext()
+                  )}
+                </td>
+              );
+            })}
+          </tr>
+        );
+      })}
     </tbody>
   );
 };
