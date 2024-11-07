@@ -62,7 +62,6 @@ const TableBodyComponent = ({ table, handleClick }) => {
                   !cell.getIsPlaceholder() && cell.column.columnDef.cellBackgroundColor?.(),
               };
 
-              // Verifica si cell.column.columnDef.cell está definido antes de usarlo
               if (!cell.column.columnDef.cell) {
                 console.error(`cell.column.columnDef.cell is undefined for cell: ${cell.id}`);
                 return <td key={cell.id} role='cell' className={styles['tr-oveflow']} style={style}>N/A</td>;
