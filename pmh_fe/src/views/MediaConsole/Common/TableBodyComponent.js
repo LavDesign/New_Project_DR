@@ -69,7 +69,13 @@ const TableBodyComponent = ({ table, handleClick }) => {
                 if (!cell.column.columnDef.cell) {
                   console.error(`cell.column.columnDef.cell is undefined for cell: ${cell.id}`);
                   return <td key={cell.id} role='cell' className={styles['tr-oveflow']} style={style}>N/A</td>;
-                }     
+                }   
+
+                let cellValue = cell.getValue();
+                if (typeof cellValue === 'undefined') {
+                  console.error(`cell.getValue() is undefined for cell: ${cell.id}`);
+                  cellValue = 'N/A';
+                }
 
                 return cell.column.columnDef.header === 'kpiName' &&
                   selectedDailyReviewMenu.pageId ===
@@ -97,7 +103,7 @@ const TableBodyComponent = ({ table, handleClick }) => {
                     }
                   >
                     {flexRender(
-                      cell.column.columnDef.cell(cell.getValue()),
+                      cell.column.columnDef.cell(cellValue),
                       cell.getContext()
                     )}
                   </td>
@@ -114,7 +120,7 @@ const TableBodyComponent = ({ table, handleClick }) => {
                           cell.column.columnDef.header
                         )
                         ? cell.column.columnDef.cell(cell)
-                        : cell.column.columnDef.cell(cell.getValue()),
+                        : cell.column.columnDef.cell(cellValue),
                       cell.getContext()
                     )}
                   </td>
