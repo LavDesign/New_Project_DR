@@ -18,6 +18,14 @@ import ExportTableComponent from "../../../shared/ExportTableComponent";
 import "./budgetRecommendation.scss";
 import BudgetRecommendationAction from "./BudgetRecommendationAction";
 
+const getCellContent = (cell) => {
+    if (!cell.column.columnDef.cell) {
+        console.error(`cell.column.columnDef.cell is undefined for cell: ${cell.id}`);
+        return 'N/A';
+    }
+    return cell.column.columnDef.cell(cell.getValue());
+};
+
 const BudgetRecommendation = ({ tab, headerGroups, tableData }) => {
     const [data, setData] = useState(undefined);
     const [showLoaderButton, setShowLoaderButton] = useState(false);
