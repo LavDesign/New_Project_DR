@@ -19,7 +19,6 @@ import ExportTableComponent from "../../../shared/ExportTableComponent";
 import "../dailyReview.scss";
 import "./budgetRecommendation.scss"
 
-
 const BudgetRecommendation = ({ tab, headerGroups, tableData }) => {
     const [data, setData] = useState(undefined);
     const [showLoaderButton, setShowLoaderButton] = useState(false);
@@ -139,10 +138,6 @@ const BudgetRecommendation = ({ tab, headerGroups, tableData }) => {
                 }
             />
 
-            {/* <div className="daily-review-container-section-title">
-                Budget Recommendation
-            </div> */}
-
             {data ? (
                 data.message ? (
                     <span
@@ -157,7 +152,6 @@ const BudgetRecommendation = ({ tab, headerGroups, tableData }) => {
                         <TableComponent
                             tableColumnHeaders={tableColumnHeaders}
                             data={data}
-                            updateCheckedTableData={(data) => setData(data)}
                             isRowAvailable={(data) => setCheckRows(data)}
                         />
                         {checkRows?.length ? (
