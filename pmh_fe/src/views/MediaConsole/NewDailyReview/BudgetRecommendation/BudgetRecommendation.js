@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import styles from "_theme/modules/dailyReview/dailyReview.module.css";
 import * as Columns from "_helpers/columns/columns";
 import { allColumnslist } from "_helpers/columns/budgetRecommendation";
 import CustomButton from "views/UI/CustomButton";
@@ -15,16 +16,9 @@ import SectionSpinner from "common/Spinner";
 import { DAILY_REVIEW_TABS } from "_helpers/Utils/mediaConsoleUtil";
 import CommonToolBar from "../../Common/CommonToolBar/CommonToolBar";
 import ExportTableComponent from "../../../shared/ExportTableComponent";
-import "./budgetRecommendation.scss";
-import BudgetRecommendationAction from "./BudgetRecommendationAction";
+import "../dailyReview.scss";
+import "./budgetRecommendation.scss"
 
-const getCellContent = (cell) => {
-    if (!cell.column.columnDef.cell) {
-        console.error(`cell.column.columnDef.cell is undefined for cell: ${cell.id}`);
-        return 'N/A';
-    }
-    return cell.column.columnDef.cell(cell.getValue());
-};
 
 const BudgetRecommendation = ({ tab, headerGroups, tableData }) => {
     const [data, setData] = useState(undefined);
@@ -44,23 +38,12 @@ const BudgetRecommendation = ({ tab, headerGroups, tableData }) => {
             allColumnslist,
             "budgetRecommendation"
         ).filter((col) => col !== undefined);
-
         listOfColumns = listOfColumns.filter(
             (item, index) =>
                 listOfColumns.findIndex(
                     (elem) => elem.accessorKey === item.accessorKey
                 ) === index
         );
-
-        // Agrega la nueva columna de Actions con un id
-        listOfColumns.push({
-            Header: () => <span>Actions</span>,
-            id: 'actions',  // Asegúrate de incluir un identificador único
-            accessor: 'actions',
-            Cell: ({ row }) => (
-                <BudgetRecommendationAction recommendation={row.original} />
-            ),
-        });
 
         return listOfColumns;
     }, []);
@@ -155,6 +138,10 @@ const BudgetRecommendation = ({ tab, headerGroups, tableData }) => {
                     </CustomButton>
                 }
             />
+
+            {/* <div className="daily-review-container-section-title">
+                Budget Recommendation
+            </div> */}
 
             {data ? (
                 data.message ? (

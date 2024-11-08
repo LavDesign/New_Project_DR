@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import * as ReactTable from "@tanstack/react-table";
 import _ from "underscore";
@@ -26,8 +26,15 @@ const TableComponent = ({
     );
 
     const fuzzyFilter = (row, columnId, value, addMeta) => {
+        // Rank the item
         const itemRank = rankItem(row.getValue(columnId), value);
-        addMeta({ itemRank });
+
+        // Store the itemRank info
+        addMeta({
+            itemRank,
+        });
+
+        // Return if the item should be filtered in/out
         return itemRank.passed;
     };
 
@@ -42,6 +49,7 @@ const TableComponent = ({
             fuzzy: fuzzyFilter,
         },
         state: {
+            // columnFilters,
             globalFilter,
             grouping,
         },
@@ -81,14 +89,11 @@ const TableComponent = ({
     };
 
     const rowData = table?.getRowModel().rows;
-
-    useEffect(() => {
-        isRowAvailable?.(rowData);
-    }, [rowData, isRowAvailable]);
+    isRowAvailable?.(rowData);
 
     return (
         <>
-            {selectedDailyReviewMenu.pageId ===
+            {/* {selectedDailyReviewMenu.pageId ===
                 DAILY_REVIEW_TABS.BUDGET_REC.id && (
                 <GlobalFilter
                     preGlobalFilteredRows={preGlobalFilteredRows}
@@ -98,7 +103,7 @@ const TableComponent = ({
                     placeholderText={t("button_text.search_placeholder")}
                     inputSearchStyle={styles["budget-table-search-input"]}
                 />
-            )}
+            )} */}
             {rowData.length ? (
                 <div
                     className={`col col-sm-12 budget-table-container ${
