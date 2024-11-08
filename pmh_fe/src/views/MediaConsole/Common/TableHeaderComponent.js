@@ -137,49 +137,47 @@ const TableHeaderComponent = ({
             </th>
           )}
 
-          {headerGroup.headers.map((column, index) => (
-            <CustomTableHeaderCell
-              key={`custom-table-header-cell-${column.column.columnDef.header}`}
-              previousCol={getpreviousWidth(headerGroup.headers, index)}
-              onClick={column.column.getToggleSortingHandler()}
-              tooltipText={column.column.columnDef.tooltipText}
-              colSpan={column.colSpan}
-              style={{
-                width: '100%',
-                boxSizing: 'border-box',
-                cursor: 'pointer',
-                display: 'inline-block',
-                position: 'relative',
-                backgroundColor: 'rgb(229, 231, 235)',
-                boxShadow: '6px 0px 12px -10px rgba(99, 115, 129, 0.75)',
-                fontFamily: '"Graphik", sans-serif',
-                fontSize: '14px',
-                fontWeight: '800',
-                lineHeight: '18px',
-                letterSpacing: '-0.25px',
-                textAlign: 'center',
-                color: 'rgba(107, 114, 128, 1)',
-              }}
-              role='columnheader'
-            >
-              {showStaticOrDynamicHeader(column.column.columnDef.header)}
-              <span style={{ float: 'right' }}>
-                {getSortIcon(column.column.getIsSorted())}
-              </span>
-              {column.column.getCanResize() && (
-                <div
-                  role='separator'
-                  style={{ cursor: 'col-resize' }}
-                  onMouseDown={column.getResizeHandler()}
-                  onTouchStart={column.getResizeHandler()}
-                  onClick={(ev) => ev.stopPropagation()}
-                  className={`${styles.resizer} ${
-                    column.column.getIsResizing() ? styles.isResizing : ''
-                  }`}
-                />
-              )}
-            </CustomTableHeaderCell>
-          ))}
+{headerGroup.headers.map((column, index) => (
+  <CustomTableHeaderCell
+    key={`custom-table-header-cell-${column.column.columnDef.header}`}
+    previousCol={getpreviousWidth(headerGroup.headers, index)}
+    onClick={column.column.getToggleSortingHandler()}
+    tooltipText={column.column.columnDef.tooltipText}
+    colSpan={column.colSpan}
+    style={{
+      width: column.column.columnDef.header === 'actions' ? '100px' : '100%',
+      boxSizing: 'border-box',
+      cursor: 'pointer',
+      display: 'inline-block',
+      position: 'relative',
+      backgroundColor: 'rgb(229, 231, 235)',
+      boxShadow: '6px 0px 12px -10px rgba(99, 115, 129, 0.75)',
+      fontFamily: '"Graphik", sans-serif',
+      fontSize: '14px',
+      fontWeight: '800',
+      lineHeight: '18px',
+      letterSpacing: '-0.25px',
+      textAlign: column.column.columnDef.header === 'actions' ? 'center' : 'left',
+      color: 'rgba(107, 114, 128, 1)',
+    }}
+    role='columnheader'
+  >
+    {showStaticOrDynamicHeader(column.column.columnDef.header)}
+    <span style={{ float: 'right' }}>
+      {getSortIcon(column.column.getIsSorted())}
+    </span>
+    {column.column.getCanResize() && (
+      <div
+        role='separator'
+        style={{ cursor: 'col-resize' }}
+        onMouseDown={column.getResizeHandler()}
+        onTouchStart={column.getResizeHandler()}
+        onClick={(ev) => ev.stopPropagation()}
+        className={`${styles.resizer} ${column.column.getIsResizing() ? styles.isResizing : ''}`}
+      />
+    )}
+  </CustomTableHeaderCell>
+))}
         </tr>
       ))}
     </thead>
