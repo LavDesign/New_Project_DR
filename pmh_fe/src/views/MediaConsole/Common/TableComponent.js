@@ -59,9 +59,11 @@ const TableComponent = ({
 
   const preGlobalFilteredRows = table?.getPreFilteredRowModel()?.rows;
   const headerGroups = table?.getHeaderGroups();
-  selectedDailyReviewMenu.pageId === DAILY_REVIEW_TABS.CAMPAIGN_ADV.id &&
-    headerGroups &&
-    fetchHeaderData?.(headerGroups);
+  useEffect(() => {
+    if (selectedDailyReviewMenu.pageId === DAILY_REVIEW_TABS.CAMPAIGN_ADV.id && headerGroups) {
+      fetchHeaderData?.(headerGroups);
+    }
+  }, [headerGroups, fetchHeaderData, selectedDailyReviewMenu.pageId]);
 
   const handleClick = (e, id) => {
     const updatedRows = [...data];
@@ -81,7 +83,9 @@ const TableComponent = ({
   };
 
   const rowData = table?.getRowModel().rows;
-  isRowAvailable?.(rowData);
+  useEffect(() => {
+    isRowAvailable?.(rowData);
+  }, [rowData, isRowAvailable]);
 
   useEffect(() => {
     if (onHeaderGroupsChange) {

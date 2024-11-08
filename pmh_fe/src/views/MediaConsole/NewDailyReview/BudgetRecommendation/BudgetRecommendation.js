@@ -17,7 +17,7 @@ import { DAILY_REVIEW_TABS } from "_helpers/Utils/mediaConsoleUtil";
 import CommonToolBar from "../../Common/CommonToolBar/CommonToolBar";
 import ExportTableComponent from "../../../shared/ExportTableComponent";
 import "../dailyReview.scss";
-import "./budgetRecommendation.scss"
+import "./budgetRecommendation.scss";
 
 const BudgetRecommendation = ({ tab, headerGroups, tableData }) => {
     const [data, setData] = useState(undefined);
